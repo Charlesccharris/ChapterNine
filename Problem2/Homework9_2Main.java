@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Homework9_2Main{
 	public static void main(String[] args){
 		/*Modified 9.2
@@ -19,8 +21,16 @@ public class Homework9_2Main{
 		and the previous closing price of 34.5.
 		Set a new current price to 34.35 and display the price-change percentage.*/
 
+		Scanner input = new Scanner(System.in);
+
 		System.out.println("Hello");
-		Stock  = new SayHello();
-		hi.sayHello();
+		Stock business = new Stock();
+		business.getStockName(input);
+		business.getStockSymbol(input);
+		business.getLastPrice(input);
+		business.getNewPrice(input);
+
+		business.makeStock();
+		business.getChangePercent();
 	}
 }
