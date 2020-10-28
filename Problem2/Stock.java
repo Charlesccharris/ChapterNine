@@ -1,4 +1,6 @@
-public class Stock(Scanner input){
+import java.util.Scanner;
+
+public class Stock{
 	/*design a class named Stock that contains:
        	A string data field named symbol for the stock’s symbol.;
        	A string data field named name for the stock’s name.;
@@ -9,20 +11,47 @@ public class Stock(Scanner input){
 
 	private String symbol = "";
 	private String name = "";
-	private double previousClosingPrice;
-	private double currentPrice;
+	private double previousClosingPrice = 0;
+	private double currentPrice = 0;
+
+	public void getStockName(Scanner input){
+		System.out.print("Enter the stock's name: ");
+		this.name = input.nextLine();
+	}
 
 	public void getStockSymbol(Scanner input){
 		System.out.print("Enter the symbol for the stock: ");
 		this.symbol = input.next();
 	}
 
-	public void getStockName(Scanner input){
-		System.out.print("Enter the stock's name: ");
-		this.name = input.next();
+	public void getLastPrice(Scanner input){
+		System.out.print("Enter yesterday's closing price: ");
+		this.previousClosingPrice = input.nextDouble();
 	}
 
-	public double getLastPrice(){
+	public void getNewPrice(Scanner input){
+		System.out.print("Enter today's price: ");
+		this.currentPrice = input.nextDouble();
+	}
 
+	public void makeStock(){
+		System.out.println("\nStock: " + this.name + "(" + this.symbol + ")" +
+					"\nYesterday's closing price: " + this.previousClosingPrice +
+					"\nToday's price: " + this.currentPrice);
+	}
+	public void getChangePercent(){
+		double changeInPrice = this.previousClosingPrice - this.currentPrice;
+		double percentChange = 100 * ((this.previousClosingPrice - this.currentPrice) / this.previousClosingPrice);
+
+		if(changeInPrice > 0){
+			System.out.println("The price saw a decrease of " +  Math.abs(percentChange) + " percent");
+		}
+		else if(changeInPrice < 0){
+			percentChange *= -1;
+			System.out.println("The price saw an increase of " + percentChange + " percent");
+		}
+		else{
+			System.out.println("The price didn't change");
+		}
 	}
 }
