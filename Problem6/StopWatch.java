@@ -12,14 +12,17 @@ public class StopWatch{
 	private long startTime = System.currentTimeMillis();
 	private long endTime;
 
+	//Start the stop watch
 	public void start(){
 		this.startTime = System.currentTimeMillis();
 	}
 
+	//Stop the stop watch
 	public void stop(){
 		this.endTime = System.currentTimeMillis();
 	}
 
+	//Calculate the time it took
 	public long getElapsedTime(){
 		long elapsedTime = this.endTime - this.startTime;
 		return elapsedTime;
