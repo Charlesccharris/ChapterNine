@@ -11,19 +11,16 @@ public class Homework9_6Main{
 		A method named getElapsedTime() that returns the elapsed time for the stopwatch in milliseconds.
 		Make the UML diagram for the class using comments and then implement the class.
 		Write a test program that measures the execution time of sorting 100,000 numbers using selection sort.*/
+
 		int[] list = createArray();
 		long totalTime;
 		StopWatch watch = new StopWatch();
-		watch.start();
 
-/*		for(int i = 0; i < 100_000; i++){
-			int j = i;
-		}
-*/
+		watch.start();
 		java.util.Arrays.sort(list);
 		watch.stop();
 		totalTime = watch.getElapsedTime();
-		System.out.println(totalTime + " milliseconds");
+		System.out.println("It took " + totalTime + " milliseconds to sort the array");
 	}
 
 	public static int[] createArray(){
