@@ -31,22 +31,10 @@ public class Stock{
 		symbol = newSymbol;
 	}
 
-	public void getChangePercent(){
+	public double getChangePercent(){
 		double changeInPrice = this.previousClosingPrice - this.currentPrice;
 		double percentChange = 100 * ((this.previousClosingPrice - this.currentPrice) / this.previousClosingPrice);
 		percentChange = Math.abs(percentChange);
-		if(changeInPrice > 0){
-                        System.out.print("The price saw a decrease of ");
-                        System.out.printf("%.2f", percentChange);
-                        System.out.println("%");
-		}
-		else if(changeInPrice < 0){
-                        System.out.print("The price saw a decrease of ");
-                        System.out.printf("%.2f", percentChange);
-                        System.out.println("%");
-		}
-		else{
-			System.out.println("The price didn't change");
-		}
+		return percentChange;
 	}
 }

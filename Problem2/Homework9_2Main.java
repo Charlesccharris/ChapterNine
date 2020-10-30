@@ -22,10 +22,13 @@ public class Homework9_2Main{
 		Stock business = new Stock("ORCL", "Oracle Corporation");
 		business.previousClosingPrice = 34.5;
 		business.currentPrice = 34.45;
+		double percentChange = business.getChangePercent();
 
 		System.out.println("Stock: " + business.name + "(" + business.symbol + ")");
 		System.out.println("Yesterday's closing price: " + business.previousClosingPrice +
 					"\nToday's price: " + business.currentPrice);
-		business.getChangePercent();
+                System.out.print("The price saw a decrease of ");
+               	System.out.printf("%.2f", percentChange);
+               	System.out.println("%");
 	}
 }
