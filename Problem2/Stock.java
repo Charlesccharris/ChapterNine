@@ -17,66 +17,33 @@ public class Stock{
         previousClosingPrice: double
         currentPrice: double
         ---------------------------------------
-        +getStockName(input: Scanner): void
-        +getStockSymbol(input: Scanner): void
-        +getLastPrice(input: Scanner): void
-        +getNewPrice(input: Scanner): void
-        +makeStock(): void
+	Stock(newSymbol: String, newName: String)
         +getChangePercent(): void
         ---------------------------------------
 */
-	public String symbol = "";
-	public String name = "";
-	public double previousClosingPrice = 0;
-	public double currentPrice = 0;
+	String symbol = "";
+	String name = "";
+	double previousClosingPrice = 0;
+	double currentPrice = 0;
 
-/*
-	//Get stock's name
-	public void getStockName(Scanner input){
-		System.out.print("Enter the stock's name: ");
-		this.name = input.nextLine();
-	}
-
-	//Get stock's symbol
-	public void getStockSymbol(Scanner input){
-		System.out.print("Enter the symbol for the stock: ");
-		this.symbol = input.next();
-	}
-*/
-	public Stock(String newName, String newSymbol){
+	Stock(String newSymbol, String newName){
 		name = newName;
 		symbol = newSymbol;
 	}
-	//Get yesterday's closing price
-	public void getLastPrice(double closingPrice){
-//		System.out.print("Enter yesterday's closing price: ");
-		this.previousClosingPrice = closingPrice;
-	}
 
-	//Get current price
-	public void getNewPrice(double newPrice){
-//		System.out.print("Enter today's price: ");
-		this.currentPrice = newPrice;
-	}
-
-	//Display the stock's name, symbol, yesterday's closing price, and current price
-/*	public void makeStock(){
-		System.out.println("\nStock: " + this.name + "(" + this.symbol + ")" +
-					"\nYesterday's closing price: " + this.previousClosingPrice +
-					"\nToday's price: " + this.currentPrice);
-	}
-*/
-	//Get the percentage of change
 	public void getChangePercent(){
 		double changeInPrice = this.previousClosingPrice - this.currentPrice;
 		double percentChange = 100 * ((this.previousClosingPrice - this.currentPrice) / this.previousClosingPrice);
-
+		percentChange = Math.abs(percentChange);
 		if(changeInPrice > 0){
-			System.out.println("The price saw a decrease of " +  Math.abs(percentChange) + " percent");
+                        System.out.print("The price saw a decrease of ");
+                        System.out.printf("%.2f", percentChange);
+                        System.out.println("%");
 		}
 		else if(changeInPrice < 0){
-			percentChange *= -1;
-			System.out.println("The price saw an increase of " + percentChange + " percent");
+                        System.out.print("The price saw a decrease of ");
+                        System.out.printf("%.2f", percentChange);
+                        System.out.println("%");
 		}
 		else{
 			System.out.println("The price didn't change");
