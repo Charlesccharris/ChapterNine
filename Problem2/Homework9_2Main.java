@@ -34,7 +34,7 @@ public class Homework9_2Main{
 
 		business.getNewPrice(input);
 
-		business.makeStock();
+		business.displayStock();
 
 		business.getChangePercent();
 
