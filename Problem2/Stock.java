@@ -30,8 +30,6 @@ public class Stock{
 	public double previousClosingPrice = 0;
 	public double currentPrice = 0;
 
-	public Stock(){
-	}
 /*
 	//Get stock's name
 	public void getStockName(Scanner input){
