@@ -24,26 +24,20 @@ public class Homework9_2Main{
 
 		Scanner input = new Scanner(System.in);
 
-//		System.out.println("Hello");
-		Stock business = new Stock("Oracle Corporation", "ORCL");
+		Stock business = new Stock();
 
-//		business.getStockName(input);
+		business.getStockName(input);
 
-//		business.getStockSymbol(input);
+		business.getStockSymbol(input);
 
-		System.out.println("Stock: " + business.name + "(" + business.symbol + ")");
-		business.getLastPrice(34.5);
-		business.getNewPrice(34.45);
-		System.out.println("Yesterday's closing price: " + business.previousClosingPrice+
-					"\nToday's price: " + business.currentPrice);
-//		business.makeStock();
+		business.getLastPrice(input);
+
+		business.getNewPrice(input);
+
+		business.makeStock();
 
 		business.getChangePercent();
 
-/*                System.out.println("\nStock: " + business.name + "(" + business.symbol + ")" +
-                                        "\nYesterday's closing price: " + business.previousClosingPrice +
-                                        "\nToday's price: " + business.currentPrice);
-*/
 		input.close();
 	}
 }

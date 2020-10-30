@@ -30,9 +30,7 @@ public class Stock{
 	public double previousClosingPrice = 0;
 	public double currentPrice = 0;
 
-	public Stock(){
-	}
-/*
+
 	//Get stock's name
 	public void getStockName(Scanner input){
 		System.out.print("Enter the stock's name: ");
@@ -44,41 +42,40 @@ public class Stock{
 		System.out.print("Enter the symbol for the stock: ");
 		this.symbol = input.next();
 	}
-*/
-	public Stock(String newName, String newSymbol){
-		name = newName;
-		symbol = newSymbol;
-	}
+
 	//Get yesterday's closing price
-	public void getLastPrice(double closingPrice){
-//		System.out.print("Enter yesterday's closing price: ");
-		this.previousClosingPrice = closingPrice;
+	public void getLastPrice(Scanner input){
+		System.out.print("Enter yesterday's closing price: ");
+		this.previousClosingPrice = input.nextDouble();
 	}
 
 	//Get current price
-	public void getNewPrice(double newPrice){
-//		System.out.print("Enter today's price: ");
-		this.currentPrice = newPrice;
+	public void getNewPrice(Scanner input){
+		System.out.print("Enter today's price: ");
+		this.currentPrice = input.nextDouble();
 	}
 
 	//Display the stock's name, symbol, yesterday's closing price, and current price
-/*	public void makeStock(){
+	public void makeStock(){
 		System.out.println("\nStock: " + this.name + "(" + this.symbol + ")" +
 					"\nYesterday's closing price: " + this.previousClosingPrice +
 					"\nToday's price: " + this.currentPrice);
 	}
-*/
+
 	//Get the percentage of change
 	public void getChangePercent(){
 		double changeInPrice = this.previousClosingPrice - this.currentPrice;
 		double percentChange = 100 * ((this.previousClosingPrice - this.currentPrice) / this.previousClosingPrice);
-
+		percentChange = Math.abs(percentChange);
 		if(changeInPrice > 0){
-			System.out.println("The price saw a decrease of " +  Math.abs(percentChange) + " percent");
+			System.out.print("The price saw a decrease of ");
+			System.out.printf("%.2f", percentChange);
+			System.out.println("%");
 		}
 		else if(changeInPrice < 0){
-			percentChange *= -1;
-			System.out.println("The price saw an increase of " + percentChange + " percent");
+			System.out.print("The price saw an increase of ");
+			System.out.printf("%.2f", percentChange);
+			System.out.println("%");
 		}
 		else{
 			System.out.println("The price didn't change");
