@@ -14,7 +14,6 @@ public class Homework9_6Main{
 
 		long totalTime;
 		StopWatch watch = new StopWatch();
-
 		int[] list = createArray();
 
 		watch.start();
