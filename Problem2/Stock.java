@@ -9,17 +9,17 @@ public class Stock{
        	A constructor that creates a stock with the specified symbol and name;
        	A method named getChangePercent() that returns the percentage changed from previousClosingPrice to currentPrice.*/
 
-/*      ---------------------------------------
-                         Stock
-        ---------------------------------------
+/*      -----------------------------------------
+                          Stock
+        -----------------------------------------
         stockSymbol: String
         stockName: String
         previousClosingPrice: double
         currentPrice: double
-        ---------------------------------------
+        -----------------------------------------
 	Stock(newSymbol: String, newName: String)
         +getChangePercent(): double
-        ---------------------------------------
+        -----------------------------------------
 */
 	String symbol = "";
 	String name = "";
