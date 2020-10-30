@@ -12,9 +12,10 @@ public class Homework9_6Main{
 		Make the UML diagram for the class using comments and then implement the class.
 		Write a test program that measures the execution time of sorting 100,000 numbers using selection sort.*/
 
-		int[] list = createArray();
 		long totalTime;
 		StopWatch watch = new StopWatch();
+
+		int[] list = createArray();
 
 		watch.start();
 		java.util.Arrays.sort(list);
