@@ -9,11 +9,30 @@ public class Stock{
        	A constructor that creates a stock with the specified symbol and name;
        	A method named getChangePercent() that returns the percentage changed from previousClosingPrice to currentPrice.*/
 
-	private String symbol = "";
-	private String name = "";
-	private double previousClosingPrice = 0;
-	private double currentPrice = 0;
+/*      ---------------------------------------
+                         Stock
+        ---------------------------------------
+        stockSymbol: String
+        stockName: String
+        previousClosingPrice: double
+        currentPrice: double
+        ---------------------------------------
+        +getStockName(input: Scanner): void
+        +getStockSymbol(input: Scanner): void
+        +getLastPrice(input: Scanner): void
+        +getNewPrice(input: Scanner): void
+        +makeStock(): void
+        +getChangePercent(): void
+        ---------------------------------------
+*/
+	public String symbol = "";
+	public String name = "";
+	public double previousClosingPrice = 0;
+	public double currentPrice = 0;
 
+	public Stock(){
+	}
+/*
 	//Get stock's name
 	public void getStockName(Scanner input){
 		System.out.print("Enter the stock's name: ");
@@ -25,26 +44,30 @@ public class Stock{
 		System.out.print("Enter the symbol for the stock: ");
 		this.symbol = input.next();
 	}
-
+*/
+	public Stock(String newName, String newSymbol){
+		name = newName;
+		symbol = newSymbol;
+	}
 	//Get yesterday's closing price
-	public void getLastPrice(Scanner input){
-		System.out.print("Enter yesterday's closing price: ");
-		this.previousClosingPrice = input.nextDouble();
+	public void getLastPrice(double closingPrice){
+//		System.out.print("Enter yesterday's closing price: ");
+		this.previousClosingPrice = closingPrice;
 	}
 
 	//Get current price
-	public void getNewPrice(Scanner input){
-		System.out.print("Enter today's price: ");
-		this.currentPrice = input.nextDouble();
+	public void getNewPrice(double newPrice){
+//		System.out.print("Enter today's price: ");
+		this.currentPrice = newPrice;
 	}
 
 	//Display the stock's name, symbol, yesterday's closing price, and current price
-	public void makeStock(){
+/*	public void makeStock(){
 		System.out.println("\nStock: " + this.name + "(" + this.symbol + ")" +
 					"\nYesterday's closing price: " + this.previousClosingPrice +
 					"\nToday's price: " + this.currentPrice);
 	}
-
+*/
 	//Get the percentage of change
 	public void getChangePercent(){
 		double changeInPrice = this.previousClosingPrice - this.currentPrice;
