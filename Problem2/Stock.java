@@ -18,7 +18,7 @@ public class Stock{
         currentPrice: double
         ---------------------------------------
 	Stock(newSymbol: String, newName: String)
-        +getChangePercent(): void
+        +getChangePercent(): double
         ---------------------------------------
 */
 	String symbol = "";
@@ -31,7 +31,7 @@ public class Stock{
 		symbol = newSymbol;
 	}
 
-	public double getChangePercent(){
+	double getChangePercent(){
 		double changeInPrice = this.previousClosingPrice - this.currentPrice;
 		double percentChange = 100 * ((this.previousClosingPrice - this.currentPrice) / this.previousClosingPrice);
 		percentChange = Math.abs(percentChange);
